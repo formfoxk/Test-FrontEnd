@@ -1,6 +1,92 @@
-#table {display: table; width: 100%;}
-.row {display: table-row;}
-.cell {display: table-cell; padding: 3px; border-bottom: 1px solid #DDD;}
-.col1 { width: 20%;}
-.col2 {width: 20%;}
-.col3 {width: 40%;}
+.main-center {
+	border: 1px solid C8C8C8;
+	text-align: center;
+	border-collapse: collapse;
+}
+
+/* main-aside */
+
+.main-aside {
+	width: 100%;
+}
+
+.main-aside .aside-body {
+	padding: 8px 5px;
+	border-bottom: 1px solid #C8C8C8;
+	background: #DCDCDC;
+}
+
+.main-aside .aside-body .links {
+	font-size: 14px;
+	font-weight: normal;
+	text-align: right;
+}
+
+.main-aside .aside-body .links a {
+	display: inline-block;
+	background: #FFFFFF;
+	color: #DCDCDC;
+	padding: 2px 8px;
+	border-radius: 5px;
+}
+
+/* main-table */
+
+.main-table {
+	width: 100%;
+}
+
+.main-table .table-header {
+	background: #DCDCDC;
+}
+
+.main-table .table-header .table-head {
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.main-table .table-head,
+.main-table .table-cell {
+	border: 1px solid #DCDCDC;
+	padding: 5px 4px;
+}
+
+.main-table .table-body .table-cell {
+	font-size: 13px;
+}
+
+/* setting div tag table  */
+
+.main-table {
+	display: table;
+}
+
+.table-header {
+	display: table-header-group;
+}
+
+.table-body {
+	display: table-row-group;
+}
+
+.table-row {
+	display: table-row;
+}
+
+.table-head,
+.table-cell {
+	display: table-cell;
+}
+
+.table-col1 {
+	width: 50%;
+}
+
+.table-col2 {
+	width: 20%;
+}
+
+.table-col3 {
+	width: 30%;
+}
