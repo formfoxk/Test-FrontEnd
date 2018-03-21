@@ -1,0 +1,129 @@
+<!-- 
+https://thenextweb.com/
+오프 캔버스 패턴이란?
+창의 크기가 작아져서 더 이상 창 안에서 콘텐츠를 표현할 수 없을 때 창의 바깥쪽으로 내용을 숨기는 방법
+숨겨진 버튼이나 텍스트 링크 등은 필요할 때 내용을 호출하면 창 안쪽으로 불러와서 보여줍니다. 
+ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style type="text/css">
+        body {
+            overflow-x: hidden;
+        }
+
+        .container div {
+            min-height: 640px;
+            min-width: 150px;
+            display: block;
+        }
+
+        .c1 {
+            background-color: #003476;
+        }
+
+        .c2 {
+            background-color: #18709C;
+        }
+
+        .c3 {
+            background-color: #EF4089;
+        }
+
+        .c1,
+        .c3 {
+            position: absolute;
+            width: 250px;
+            height: 100%;
+            backface-visibility: hidden;
+            transition: transform 0.4s ease-out;
+            z-index: 1;
+        }
+
+        .c1 {
+            transform: translate(-250px, 0);
+        }
+
+        .c2 {
+            width: 100%;
+            position: absolute;
+        }
+
+        .c3 {
+            left: 100%;
+        }
+
+        .c1.open {
+            transform: translate(0, 0);
+        }
+
+        .c3.open {
+            transform: translate(-250px, 0);
+        }
+
+        @media (min-width: 600px) {
+            .container {
+                display: flex;
+                flex-flow: row nowrap;
+            }
+            .c1 {
+                position: relative;
+                transition: none 0s ease-out;
+                transform: translate(0, 0);
+            }
+            .c2 {
+                position: static;
+            }
+        }
+
+        @media (min-width: 1000px) {
+            body {
+                overflow-x: auto;
+            }
+            .c3 {
+                position: relative;
+                left: auto;
+                transition: none 0s ease-out;
+                transform: translate(0, 0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="c1" id="leftDrawer"></div>
+        <div class="c2" id="mainPanel"></div>
+        <div class="c3" id="rightDrawer"></div>
+    </div>
+    <script type="text/javascript">
+        var position = 0;
+        var mainPanel = document.getElementById("mainPanel");
+        var leftDrawer = document.getElementById("leftDrawer");
+        var rightDrawer = document.getElementById("rightDrawer");
+
+        function toggle(evt) {
+            position++;
+            if (position % 3 == 0) {
+                leftDrawer.classList.remove("open");
+                rightDrawer.classList.remove("open");
+            } else if (position % 3 == 1) {
+                leftDrawer.classList.add("open");
+                rightDrawer.classList.remove("open");
+            } else {
+                leftDrawer.classList.remove("open");
+                rightDrawer.classList.add("open");
+            }
+        }
+
+        mainPanel.addEventListener("click", toggle);
+        leftDrawer.addEventListener("click", toggle);
+        rightDrawer.addEventListener("click", toggle);
+    </script>
+</body>
+
+</html>

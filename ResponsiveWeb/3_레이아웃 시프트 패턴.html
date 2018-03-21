@@ -1,0 +1,56 @@
+<!-- 
+http://foodsense.is
+레이아웃 시프터 패턴
+화면의 폭이 좁아져서 더 이상 콘텐츠를 제대로 표현하기 힘들 때 단순히 단을 내리거나 내용을 생략하는 것이 아니라 레이아웃 자체에 변화를 주어 새로운 형태로 콘텐츠를 표현하는 방법
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>	
+    <meta name="viewport" content="width=device-width,initial-scale=1"> 
+<style type="text/css">
+<!-- 
+.container div {
+  min-height: 140px;
+  min-width: 150px;
+}
+.c1 { background-color: #003476; }
+.c2 { background-color: #18709C; }
+.c3 { background-color: #19BDC4; }
+.c4 { background-color: #EF4089; }
+
+.container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.c1 { width: 100%; order: 2; }
+.c2 { width: 100%; order: 1; }
+.c3 { width: 100%; order: 3; }
+.c4 { width: 100%; order: 4; }
+
+@media (min-width: 600px) {
+    .c1 { width: 25%; order: 1; }
+    .c2 { width: 75%; order: 2; }
+    .c3 { width: 100%; order: 3; }
+    .c4 { width: 100%; order: 4; }
+}
+@media (min-width: 1000px) {
+    .c1 { width: 25%; order: 1; }
+    .c2 { width: 25%; order: 3; }
+    .c3 { width: 75%; order: 2; }
+    .c4 { width: 75%; order: 4; }
+}  
+-->
+</style>	
+</head>
+<body>
+<div class="container">
+    <div class="c1"></div>
+    <div class="c2"></div>
+    <div class="c3"></div>
+    <div class="c4"></div>
+</div>
+</body>
+</html>

@@ -9,6 +9,7 @@
 	<script type="text/javascript" src="/resources/js/myFileExplorer.js"></script>
 	<script type="text/javascript" src="https://swisnl.github.io/jQuery-contextMenu/dist/jquery.contextMenu.js"></script>
 	<link href="https://swisnl.github.io/jQuery-contextMenu/dist/jquery.contextMenu.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
 	<link href="css/common.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -16,25 +17,24 @@
 	<div id="page-wrapper">
 		<header id="main-header">
 			<hgroup>
-				<div class="pull-left">
-					<img class="master-img" src="http://placehold.it/30x30" />
-					<h1 class="master-title">File Explorer</h1>
-				</div>
-				<div class="pull-right">
-					<img class="mater-user" src="http://placehold.it/30x30" />
-				</div>
+				<img class="master-img" src="http://placehold.it/30x30" />
+				<h1 class="master-title">File Explorer</h1>
+				<img class="master-user" src="http://placehold.it/30x30" />
 			</hgroup>
 		</header>
 		<div id="content">
             <div class="main-center">
-                <div class="main-aside">
-                    <div class="aside-body">
-                        <div class="links">
-                            <a class="active" href="#">1</a>
-                            <a href="#">2</a>
-                            <a href="#">3</a>
-                            <a href="#">4</a>
-                        </div>
+                <div class="center-top">
+                    <div class="top-body">
+							<div class="cur-dir-path">
+								<h3>Path: /home/yujoo/FileExplorerHome/뷰어 테스트</h3>
+							</div>
+							<div class="search-bar">
+								<form>
+									<input type="text" class="input-search"/>
+									<input type="submit" class="input-search-submit" value="검색"/>
+								</form>
+							</div>
                     </div>
                 </div>
                 <div class="main-table">
@@ -74,9 +74,7 @@
 
 
 
-	<div class="cur-dir-path">
-		<h3>Path: /home/yujoo/FileExplorerHome/뷰어 테스트</h3>
-	</div>
+	
 	<hr>
 	<div>
 		<form id="upload-form" enctype="multipart/form-data" method="post">
