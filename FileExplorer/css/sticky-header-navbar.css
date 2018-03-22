@@ -1,0 +1,40 @@
+ul.aui-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+ul.aui-nav li {
+    float: left;
+    padding : 0 10px;
+}
+
+ul.aui-nav li a.logo {
+    display: block;
+    padding : 8px 0;
+}
+
+ul.aui-nav li a.logo img {
+    max-height: 20px;
+}
+
+ul.aui-nav li a#file-explorer-link {
+    display: block;
+    color: #FFFFFF;
+    padding: 11px 0;
+    text-align: center;
+    text-decoration: none;
+}
+
+ul.aui-nav li a:hover:not(.active) {background-color: #111;}
+
+ul.aui-nav li a.active {background-color: #4CAF50;}
+
+ul.aui-nav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+    ul.aui-nav li.right, 
+    ul.aui-nav li {float: none;}
+}
