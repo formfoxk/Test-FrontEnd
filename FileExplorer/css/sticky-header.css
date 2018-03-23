@@ -1,0 +1,64 @@
+#aui-header {
+    height: 40px;
+    padding: 0 5px;
+    background: #205081;
+    position: relative;
+}
+
+.aui-header-title {
+    float:left;
+    padding-right: 5px;
+}
+
+.aui-header-title > h1 {
+    background: url('../images/logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 85%;
+    text-indent: -9999px;
+    max-height: 40px;
+    width: 120px;
+    height: 38px;
+    padding: 1px 0;
+}
+
+.aui-header-primary { 
+    float:left;
+}
+
+.aui-header-primary > ul > li {
+    float: left;
+    height: 20px;
+    padding: 10px 10px;
+}
+
+.aui-header-primary > ul > li.active {
+    background-color: #326ca6;
+}
+
+.aui-header-primary > ul > li > a {
+    color: #ffffff;
+}
+
+.aui-header-primary a > span {
+    font-size: 13px;
+}
+
+.aui-header-secondary {
+    float: right;
+}
+
+.aui-header-secondary > ul > li {
+    float: left;
+    height: 30px;
+    padding: 5px 8px;
+
+}
+
+.aui-header-secondary a > img {
+    height: 30px;
+    width:30px;
+    /* padding: .5px .5px; */
+    /* border: .5px solid #ccc; */
+    border-radius: 5px;
+}

@@ -1,18 +1,58 @@
 * {
-    font-family: 'Nanum Gothic', sans-serif;
-}
-
-html,
-body {
     margin: 0;
     padding: 0;
-    display: block;
+    font-family: 'Nanum Gothic', sans-serif;
 }
 
 a {
     text-decoration: none;
 }
 
+img {
+    border: 0;
+}
+
 li {
     list-style: none;
+}
+
+html {
+    background: #ffffff;
+}
+
+#content {
+    position: absolute;
+    top: 40px;
+    bottom: 26px;
+    left: 0;
+    right: 0;
+}
+
+.div-table {
+    display: table;
+}
+
+.div-table-row {
+    display: table-row;
+}
+
+.div-table-heading {
+    display: table-header-group;
+}
+
+.div-table-cell,
+.div-table-head {
+    display: table-cell;
+}
+
+.div-table-heading {
+    display: table-header-group;
+}
+
+.div-table-foot {
+    display: table-footer-group;
+}
+
+.div-table-body {
+    display: table-row-group;
 }

@@ -1,0 +1,18 @@
+#footer {
+    position: fixed;
+    left: 0;
+    bottom : 0;
+    height: 23px;
+    width: 100%;
+    border-top: 1px solid #E6E6E6;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.footer-description {
+    padding: 2px 0;
+}
+
+.footer-description > span {
+    font-size: 8px;
+}
