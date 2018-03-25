@@ -20,15 +20,25 @@
 }
 
 /* top style */
-.content-top div.path {
+.content-top div.cur-dir-path {
     float: left;
     height: 15px;
-    width: 50%;
+    /* Firefox */
+    width: -moz-calc(58% - 10px);
+    /* WebKit */
+    width: -webkit-calc(58% - 10px);
+    /* Opera */
+    width: -o-calc(58% - 10px);
+    /* Standard */
+    width: calc(58% - 10px);
     padding: 3px 5px;
     border: 1px solid rgba(100, 100, 100, 0.3);
     border-radius: 5px;
     background-color: #ffffff;
     font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis
 }
 
 .content-top div.delimiter {
@@ -56,6 +66,7 @@
     float: left;
     width: 50%;
     margin: 1px 8px;
+    
 }
 
 .upload-form > #upload-form > input#upload-submit {
@@ -63,6 +74,31 @@
     margin: 1px 8px;
     padding: 1px 5px;
 }
+
+@media only screen and (max-width: 600px) {
+    .content-top {
+        height: 50px;
+    }
+    .content-top div.cur-dir-path {
+        margin-bottom: 3px;
+        /* Firefox */
+        width: -moz-calc(100% - 10px);
+        /* WebKit */
+        width: -webkit-calc(100% - 10px);
+        /* Opera */
+        width: -o-calc(100% - 10px);
+        /* Standard */
+        width: calc(100% - 10px);
+    }
+    .content-top div.delimiter {
+        display: none;
+    }
+    .content-top>.upload-form {
+        float: left;
+        width: 100%;
+    }
+}
+
 
 /* table style */
 .gray-table {
@@ -109,4 +145,49 @@
 
 .gray-table .div-table-body .col3 {
     text-align: center;
+}
+
+/* hover */
+.hover {
+    transition: all 0.5s, color 0.3s 0.3s;
+    cursor: pointer;
+}
+.hover:hover {
+    color:#ffffff;
+    box-shadow:
+            0 28px 0 0  #1C1C1C inset,
+            0 -28px 0 0  #1C1C1C inset;
+}
+
+/*context menu*/
+.context-menu-list {
+    background: black;
+    border: 1px solid black;
+}
+
+.context-menu-list:after {
+    bottom: 100%;
+    left: 5%;
+    border: solid rgba(122, 122, 122, 0);
+    border-bottom-color: #1C1C1C;
+    border-width: 8px;
+    margin-left: -5px;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.context-menu-item {
+    background-color: #1C1C1C;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 10px;
+    text-decoration: underline;
+    color: #fff;
+}
+
+.context-menu-item:hover {
+    background-color: #ffffff;
+    color: #1C1C1C
 }

@@ -55,10 +55,12 @@
 
 }
 
-.aui-header-secondary a > img {
+.aui-header-secondary a > div.aui-nav-img {
     height: 30px;
     width:30px;
     /* padding: .5px .5px; */
     /* border: .5px solid #ccc; */
     border-radius: 5px;
+    background: url('../images/짱구.png');
+    background-size: 30px;
 }

@@ -26,6 +26,7 @@ html {
     bottom: 26px;
     left: 0;
     right: 0;
+    overflow: scroll;
 }
 
 .div-table {
