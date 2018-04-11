@@ -1,171 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<title>File Explorer</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<script type="text/javascript" src="/resources/lib/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="/resources/lib/jquery.form.min.js"></script>
-	<script type="text/javascript" src="/resources/js/myFileExplorer.js"></script>
-	<script type="text/javascript" src="https://swisnl.github.io/jQuery-contextMenu/dist/jquery.contextMenu.js"></script>
-	<link href="https://swisnl.github.io/jQuery-contextMenu/dist/jquery.contextMenu.css" rel="stylesheet" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
-	<link href="css/common.css" rel="stylesheet" type="text/css">
-	<link href="css/sticky-header-navbar.css" rel="stylesheet" type="text/css">
-	<link href="css/sticky-footer-navbar.css" rel="stylesheet" type="text/css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script type="text/javascript" src="js/file-upload.js"></script>
+	<link href="css/file-upload.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-		<header id="header">
-			<nav class="aui-header">
-				<div class="aui-header-primary">
-					<h1 class="aui-header-logo">
-						<a href="#">
-							<img class="logo" src="images/logo_synapsoft.jpg" />
-						</a>
-					</h1>
-					<ul class="aui-nav">
-						<li>
-							<a id="file-explorer-link" href="#">
-								<span>File Explorer</span>
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div class="aui-header-sencondary">
-					<ul class="aui-nav">
-						<li>
-							<img class="master-user" src="http://placehold.it/30x30" />
-						</li>
-					</ul>
-				</div>
-			</nav>
-			
-		</header>
+	<div class="filebox bs3-primary">
+		<input class="upload-name" value="파일선택" disabled="disabled">
 
-		<div id="page-wrapper">
-				<ul class="main-top-nav">
-					<li>
-						<a href="#">
-							<img class="logo" src="images/logo_synapsoft.jpg" />
-						</a>
-					</li>
-					<li>
-						<a class="active" href="#">FileExplorer</a>
-					</li>
-					<li class="right">
-						<a href="#">
-							<img class="user" src="http://placehold.it/30x30" />
-						</a>
-					</li>
-				</ul>
-
-		<div id="content">
-			<div class="main-center">
-				<div class="center-top">
-					<div class="top-body">
-						<div class="cur-dir-path">
-							<h3>Path: /home/yujoo/FileExplorerHome/뷰어 테스트</h3>
-						</div>
-						<div class="search-bar">
-							<form>
-								<input type="text" class="input-search" />
-								<input type="submit" class="input-search-submit" value="검색" />
-							</form>
-						</div>
-					</div>
-				</div>
-				<div class="main-table">
-					<div class="table-header">
-						<div class="table-row">
-							<div class="table-head table-col1">head1</div>
-							<div class="table-head table-col2">head2</div>
-							<div class="table-head table-col3">head3</div>
-						</div>
-					</div>
-					<div class="table-body">
-						<div class="table-row">
-							<div class="table-cell table-col1">cell1_1</div>
-							<div class="table-cell table-col2">cell2_1</div>
-							<div class="table-cell table-col3">cell3_1</div>
-						</div>
-						<div class="table-row">
-							<div class="table-cell table-col1">cell1_2</div>
-							<div class="table-cell table-col2">cell2_2</div>
-							<div class="table-cell table-col3">cell3_2</div>
-						</div>
-						<div class="table-row">
-							<div class="table-cell table-col1">cell1_3</div>
-							<div class="table-cell table-col2">cell2_3</div>
-							<div class="table-cell table-col3">cell3_3</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<footer id="main-footer">
-			<div class="footer-description">
-				Created By JOOHYEON-YU
-			</div>
-		</footer>
+		<label for="ex_filename">업로드</label>
+		<input type="file" id="ex_filename" class="upload-hidden">
 	</div>
 
-
-
-
-	<hr>
-	<div>
+	<div class="upload-form">
 		<form id="upload-form" enctype="multipart/form-data" method="post">
 			<input type="file" id="upload-file" name="upload-file">
-			<input type="submit" id="upload-submit" value="submit" _vimium-has-onclick-listener="">
+			<input type="submit" id="upload-submit" value="파일 업로드">
 		</form>
 	</div>
-	<div class="files">
-		<table>
-			<tbody>
-				<tr>
-					<td>
-						<span class="prev-dir-name" )="" _vimium-has-onclick-listener="">..</span>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<span class="dir-name" _vimium-has-onclick-listener="">*[뷰어 테스트 샘플문서]</span>
-					</td>
-					<td>2018-03-16 18:02</td>
-					<td>-</td>
-				</tr>
-				<tr>
-					<td>
-						<span class="dir-name" _vimium-has-onclick-listener="">*[뷰어 테스트 암호문서]</span>
-					</td>
-					<td>2017-11-07 10:40</td>
-					<td>-</td>
-				</tr>
-				<tr>
-					<td>
-						<span class="dir-name" _vimium-has-onclick-listener="">*[뷰어 테스트 이미지]</span>
-					</td>
-					<td>2018-03-05 11:33</td>
-					<td>-</td>
-				</tr>
-				<tr>
-					<td>
-						<span class="context-menu">Multi Threading_???_20180220.pptx</span>
-					</td>
-					<td>2018-03-16 16:01</td>
-					<td>1.2M</td>
-				</tr>
-				<tr>
-					<td>
-						<span class="context-menu">Multi Threading_유주현_20180220.pptx</span>
-					</td>
-					<td>2018-03-16 17:04</td>
-					<td>1.2M</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+
+	<a href="http://webdir.tistory.com/435" target="_blank" class="where">posted in webdir</a>
 </body>
 
 </html>

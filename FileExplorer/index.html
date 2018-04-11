@@ -5,15 +5,16 @@
 	<title>File Explorer</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script type="text/javascript" src="/resources/lib/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="/resources/lib/jquery.form.min.js"></script>
-	<script type="text/javascript" src="/resources/js/myFileExplorer.js"></script>
+	<script type="text/javascript" src="lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="lib/jquery.form.min.js"></script>
+	<script type="text/javascript" src="js/myFileExplorer.js"></script>
 	<script type="text/javascript" src="https://swisnl.github.io/jQuery-contextMenu/dist/jquery.contextMenu.js"></script>
 	<link href="https://swisnl.github.io/jQuery-contextMenu/dist/jquery.contextMenu.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
 	<link href="css/common.css" rel="stylesheet" type="text/css">
 	<link href="css/sticky-header.css" rel="stylesheet" type="text/css">
 	<link href="css/sticky-footer.css" rel="stylesheet" type="text/css">
+	<link href="css/sticky-header-tool-tip.css" rel="stylesheet" type="text/css">
 	<link href="css/file-explorer-content.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -21,16 +22,17 @@
 	<header id="aui-header">
 		<div class="aui-header-title">
 			<p style="text-align: center">
-				<h1>
-					SynapSoft
-				</h1>
 			</p>
+			<h1>
+				SynapSoft
+			</h1>
+			<p></p>
 		</div>
 
 		<nav class="aui-header-primary">
 			<ul>
 				<li class="active">
-					<a href="#">
+					<a href="/">
 						<span>File Explorer</span>
 					</a>
 				</li>
@@ -41,7 +43,10 @@
 			<ul>
 				<li>
 					<a href="#">
-						<img class="aui-nav-img" src="images/짱구.png" />
+						<div class="aui-nav-img tool-tip">
+							<span class="tool-tip-text">Pro active!
+								<br>Fast running!</span>
+						</div>
 					</a>
 				</li>
 			</ul>
@@ -50,7 +55,7 @@
 
 	<div id="content">
 		<div class="content-top">
-			<div class="path">/home/document</div>
+			<div class="cur-dir-path">Path &gt; /Users/yujoo/Downloads/FutureHouse</div>
 			<div class="upload-form">
 				<form id="upload-form" enctype="multipart/form-data" method="post">
 					<input type="file" id="upload-file" name="upload-file">
@@ -70,24 +75,249 @@
 				</div>
 				<div class="div-table-body">
 					<div class="div-table-row">
-						<div class="div-table-cell col1">cell1_1</div>
-						<div class="div-table-cell col2">cell2_1</div>
-						<div class="div-table-cell col3">cell3_1</div>
+						<div class="div-table-cell col1 hover prev-dir-name">..</div>
+						<div class="div-table-cell col2"></div>
+						<div class="div-table-cell col3"></div>
 					</div>
 					<div class="div-table-row">
-						<div class="div-table-cell col1">cell1_2</div>
-						<div class="div-table-cell col2">cell2_2</div>
-						<div class="div-table-cell col3">cell3_2</div>
+						<div class="div-table-cell col1 hover context-menu">The Chainsmokers - New York City (Audio).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:46</div>
+						<div class="div-table-cell col3">8.9M</div>
 					</div>
 					<div class="div-table-row">
-						<div class="div-table-cell col1">cell1_3</div>
-						<div class="div-table-cell col2">cell2_3</div>
-						<div class="div-table-cell col3">cell3_3</div>
+						<div class="div-table-cell col1 hover context-menu">Two Door Cinema Club - Sleep Alone (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:52</div>
+						<div class="div-table-cell col3">10.8M</div>
 					</div>
 					<div class="div-table-row">
-						<div class="div-table-cell col1">cell1_4</div>
-						<div class="div-table-cell col2">cell2_4</div>
-						<div class="div-table-cell col3">cell3_4</div>
+						<div class="div-table-cell col1 hover context-menu">Chromeo - Jealous (I Ain t With It) (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:50</div>
+						<div class="div-table-cell col3">8.7M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">How We Made It Don’t Let Me Down Guitar.mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:46</div>
+						<div class="div-table-cell col3">9.0M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">Jose Gonzalez - Step Out (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:49</div>
+						<div class="div-table-cell col3">8.8M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">Phoenix - Trying To Be Cool (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:52</div>
+						<div class="div-table-cell col3">10.9M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">The Chainsmokers vs. Dragonette - Let It Go (The Chainsmokers Filter No. 2) [2 Condiments 1 Girl].mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:52</div>
+						<div class="div-table-cell col3">3.7M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">Life Of Dillon - Overload (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:47</div>
+						<div class="div-table-cell col3">7.4M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">NONONO - Pumpin Blood (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:50</div>
+						<div class="div-table-cell col3">9.2M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">A-Trak - Push (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:49</div>
+						<div class="div-table-cell col3">9.2M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">The Chainsmokers - Don t Let Me Down (Audio) ft. Daya.mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:46</div>
+						<div class="div-table-cell col3">8.0M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">The Chainsmokers - Inside Out (Audio) feat. Charlee.mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:46</div>
+						<div class="div-table-cell col3">8.9M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">Mikky Ekko - Kids (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:51</div>
+						<div class="div-table-cell col3">8.9M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">Josef Salvat - Open Season (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:48</div>
+						<div class="div-table-cell col3">8.6M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">Sultan + Ned Shepard ft. Quila - Walls (The Chainsmokers ReBoot - Filter No. 1).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:53</div>
+						<div class="div-table-cell col3">13.0M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">Foxes - Holding On To Heaven (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:50</div>
+						<div class="div-table-cell col3">8.9M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">BANKS - Change (The Chainsmokers Hot &amp; Steamy Edit).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:52</div>
+						<div class="div-table-cell col3">10.7M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">The Colourist - Fix This (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:51</div>
+						<div class="div-table-cell col3">8.2M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">The Chainsmokers - Polkadots (Original Mix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:50</div>
+						<div class="div-table-cell col3">8.0M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">The Chainsmokers, Tritonal - Until You Were Gone (Audio) ft. Emily Warren.mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:47</div>
+						<div class="div-table-cell col3">11.8M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">Icona Pop - Girlfriend (The Chainsmokers Remix) [OUT NOW].mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:51</div>
+						<div class="div-table-cell col3">10.5M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">Little Daylight - Overdose (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:53</div>
+						<div class="div-table-cell col3">10.6M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">Steve Aoki feat. Fall Out Boy - Back To Earth (The Chainsmokers Remix) [Cover Art].mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:48</div>
+						<div class="div-table-cell col3">8.5M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">Guy Sebastian - Like A Drum (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:50</div>
+						<div class="div-table-cell col3">7.7M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">Daughter - Medicine (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:52</div>
+						<div class="div-table-cell col3">10.0M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">How We Made It Roses Drop.mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:49</div>
+						<div class="div-table-cell col3">19.0M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">The Chainsmokers - Good Intentions ft. BullySongs.mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:47</div>
+						<div class="div-table-cell col3">8.0M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">The Chainsmokers - The One (Audio).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:45</div>
+						<div class="div-table-cell col3">6.8M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">Anna of the North - Sway (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:48</div>
+						<div class="div-table-cell col3">6.9M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">Say Lou Lou - Julian (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:53</div>
+						<div class="div-table-cell col3">9.6M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">Neon Trees - Sleeping With A Friend (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:51</div>
+						<div class="div-table-cell col3">8.7M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">The Chainsmokers - Waterbed (Audio) ft. Waterbed.mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:47</div>
+						<div class="div-table-cell col3">8.1M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">Bastille - Flaws (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:50</div>
+						<div class="div-table-cell col3">9.7M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">Adventure Club - Wonder (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:50</div>
+						<div class="div-table-cell col3">8.4M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">Cash Cash ft. Bebe Rexha - Take Me Home (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:51</div>
+						<div class="div-table-cell col3">8.4M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">Ellie Goulding - Goodness Gracious (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:50</div>
+						<div class="div-table-cell col3">8.9M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">The Chainsmokers vs. Tove Lo - Habits.mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:51</div>
+						<div class="div-table-cell col3">10.0M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">Jonsi - Around Us (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:51</div>
+						<div class="div-table-cell col3">10.8M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">The Chainsmokers - All We Know (Audio) ft. Phoebe Ryan.mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:45</div>
+						<div class="div-table-cell col3">7.5M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">The Chainsmokers - Let You Go Ft. Great Good Fine Ok.mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:48</div>
+						<div class="div-table-cell col3">8.3M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">Fenech Soler - Last Forever (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:52</div>
+						<div class="div-table-cell col3">12.4M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">ASTR - Operate (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:51</div>
+						<div class="div-table-cell col3">11.1M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">Smallpools - Dreaming (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:51</div>
+						<div class="div-table-cell col3">11.1M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">The Chainsmokers - The Rookie (Original Mix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:52</div>
+						<div class="div-table-cell col3">10.0M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">Bebe Rexha - Drinking About You (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:49</div>
+						<div class="div-table-cell col3">8.3M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">The Wanted - We Own The Night (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:52</div>
+						<div class="div-table-cell col3">9.9M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">The Chainsmokers - Roses (Audio) ft. ROZES.mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:47</div>
+						<div class="div-table-cell col3">8.7M</div>
+					</div>
+					<div class="div-table-row">
+						<div class="div-table-cell col1 hover context-menu">Clean Bandit &amp; Jess Glynne - Real Love (The Chainsmokers Remix).mp3</div>
+						<div class="div-table-cell col2">2017-08-02 08:49</div>
+						<div class="div-table-cell col3">11.1M</div>
 					</div>
 				</div>
 			</div>
@@ -99,7 +329,9 @@
 			<span>Created By JOOHYEON-YU</span>
 		</div>
 	</footer>
-	
+
+
+
 </body>
 
 </html>
