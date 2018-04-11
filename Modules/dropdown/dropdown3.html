@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #2b2e35;
+            padding-top: 400px;
+        }
+
+        .abtn {
+            height: 40px;
+            line-height: 40px;
+            border-radius: 3px;
+            border: 1px solid;
+            border-color: rgba(249, 250, 252, 0.5);
+            background-color: transparent;
+            font-size: 13px;
+            color: rgba(249, 250, 252, 0.5);
+        }
+
+        .abtn ul {
+            border: 1px solid;
+            border-color: rgba(249, 250, 252, 0.5);
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            border-bottom: 0;
+
+            bottom: 40px;
+            padding-left: 0px;
+            padding-top: 5px;
+        }
+
+        .abtn,
+        .abtn ul li {
+            width: 105px;
+            padding-left: 20px;
+            padding-right: 16px;
+        }
+
+        .abtn:focus {
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-top: 0px;
+            margin-top: 1px;
+            cursor: default;
+        }
+
+        .abtn ul li:hover {
+            background-color: rgba(249, 250, 252, 0.2);
+        }
+
+        /*common */
+        .opt-sel {
+            position: relative;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .opt-sel ul {
+            position: absolute;
+            left: -1px;
+            list-style: none;
+            margin: 0;
+        }
+
+        .sel-icon {
+            float: right;
+            font-size: 10px;
+        }
+
+        .sel-icon:after {
+            content: '▼';
+        }
+
+        .opt-sel:focus .sel-icon:after {
+            content: '▲';
+        }
+
+        .opt-sel ul li {
+            cursor: pointer;
+        }
+
+        .opt-sel:focus ul {
+            display: block;
+        }
+
+        .opt-sel:not(:focus) ul {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="opt-sel abtn" tabindex="1">
+        select1234
+        <div class="sel-icon"></div>
+        <ul tabindex="1">
+            <li>
+                <div>ABC</div>
+            </li>
+            <li>DEF</li>
+            <li>GHI</li>
+            <li>aaa</li>
+        </ul>
+    </div>
+</body>
+
+</html>

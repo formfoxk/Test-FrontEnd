@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .view {
+            width: 200px;
+            height: 150px;
+            border: 1px solid red;
+            overflow: hidden;
+        }
+
+        .scrollBlind {
+            width: 230px;
+            height: 100%;
+            overflow-y: scroll;
+            background-color: green;
+        }
+
+        ul {
+            width: 200px;
+        }
+
+        li {
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-bottom: 1px solid blue;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="view">
+        <div class="scrollBlind">
+            <ul>
+                <li>menu1</li>
+                <li>menu2</li>
+                <li>menu3</li>
+                <li>menu4</li>
+                <li>menu5</li>
+                <li>menu6</li>
+                <li>menu7</li>
+                <li>menu8</li>
+                <li>menu9</li>
+                <li>menu10</li>
+            </ul>
+        </div>
+    </div>
+
+    <p>저 영역을 스크롤 해보세요. 안보이는 스크롤바 완료</p>
+</body>
+
+</html>
