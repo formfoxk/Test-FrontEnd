@@ -3,7 +3,7 @@
 // var world = require('./world');
 // document.write(hello + ',' + world + '!');
 
-import './common.css';
+import '../css/common.css';
 import hello from './hello';
 import world from './world';
 document.write(`${hello}, ${world}!`);

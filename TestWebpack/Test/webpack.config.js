@@ -1,9 +1,9 @@
 module.exports = {
     entry: {
-      'entry': './entry.js'
+      'entry': './src/js/entry.js'
     },
     output: {
-      filename: 'bundle.js'
+      filename: './dist/bundle.js'
     },
     module: {
         rules: [

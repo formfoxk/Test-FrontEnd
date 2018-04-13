@@ -193,8 +193,8 @@ var update = __webpack_require__(5)(content, options);
 if(content.locals) module.exports = content.locals;
 
 if(false) {
-	module.hot.accept("!!./node_modules/css-loader/index.js!./common.css", function() {
-		var newContent = require("!!./node_modules/css-loader/index.js!./common.css");
+	module.hot.accept("!!../../node_modules/css-loader/index.js!./common.css", function() {
+		var newContent = require("!!../../node_modules/css-loader/index.js!./common.css");
 
 		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 

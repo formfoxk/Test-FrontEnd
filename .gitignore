@@ -63,7 +63,5 @@ typings/
 
 # End of https://www.gitignore.io/api/node
 
-/TestWebpack/Test1/node_modules/
 package-lock.json
-/TestWebpack/Test2/node_modules/
-/TestWebpack/Test3/node_modules/
+/TestWebpack/Test/node_modules/
