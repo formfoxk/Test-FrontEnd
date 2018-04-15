@@ -1,2 +1,2 @@
 // module.exports = 'world';
-export default 'world';
+export default 'world!!!';

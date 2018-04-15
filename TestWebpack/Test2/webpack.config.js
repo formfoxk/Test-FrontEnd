@@ -4,16 +4,21 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpackMerge = require('webpack-merge');
 
+const PATHS = {
+	src: path.join(__dirname, './src/js'),
+	dist: path.join(__dirname, 'dist'),
+}
+
 const common = {
 	context: path.join(__dirname),
 
 	entry: {
-		bundle: './src/js/index.js'
+		bundle: PATHS.src	
 	},
 
 	output: {
 		filename: '[name].js',
-		path: path.join(__dirname, 'dist')
+		path: PATHS.dist
 	},
 
 	devtool: 'eval-source-map',
@@ -89,17 +94,17 @@ const prodConfig = {
 }
 
 const serverConfig = {
-	devServer: {
-		hot: true,
-		inline: true,
-		port: 4000,
-		// compress: true,
-		// publicPath: '/dist/',
-		contentBase: path.join(__dirname, '/dist/')
-	},
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
-	]
+	],
+	devServer: {
+		// hot: true,
+		inline: true,
+		port: 4000,
+		compress: true,
+		// publicPath: '/dist/',
+		contentBase: path.join(__dirname, '/dist')
+	},
 }
 
 const target = process.env.npm_lifecycle_event;
