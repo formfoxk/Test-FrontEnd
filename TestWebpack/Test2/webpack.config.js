@@ -65,16 +65,6 @@ const common = {
 			minChunks: Infinity
 		}),
 		new ExtractTextPlugin('[name].css'),
-		new HtmlWebpackPlugin({
-			template: path.join(__dirname, './index.html'),
-			filename: path.join(__dirname, './dist/index.html'),
-			inject: true,
-			// minify: {
-			// 	collapseWhitespace: true,
-			// 	keepClosingSlash: true,
-			// 	removeComments: true
-			// }
-		}),
 		// new webpack.EnvironmentPlugin(['NODE_ENV', 'DEBUG']),
 		// new webpack.DefinePlugin({
 		//     'process.env.NODE_ENV' : JSON.stringify(process.env.NODE_ENV),
@@ -85,6 +75,16 @@ const common = {
 
 const prodConfig = {
 	plugins: [
+		new HtmlWebpackPlugin({
+			template: path.join(__dirname, './index.html'),
+			filename: path.join(__dirname, './dist/index.html'),
+			inject: true,
+			minify: {
+				collapseWhitespace: true,
+				keepClosingSlash: true,
+				removeComments: true
+			}
+		}),
 		new webpack.optimize.UglifyJsPlugin({
 			compressor: {
 				warnings: false
@@ -93,8 +93,13 @@ const prodConfig = {
 	]
 }
 
-const serverConfig = {
+const devConfig = {
 	plugins: [
+		new HtmlWebpackPlugin({
+			template: path.join(__dirname, './index.html'),
+			filename: path.join(__dirname, './dist/index.html'),
+			inject: true,
+		}),
 		new webpack.HotModuleReplacementPlugin(),
 	],
 	devServer: {
@@ -110,12 +115,10 @@ const serverConfig = {
 const target = process.env.npm_lifecycle_event;
 console.log('target : ' + target);
 var config;
-if (target === 'watch') {
-	config = common;
-} else if (target === 'build') {
+if (target === 'build') {
 	config = webpackMerge(common, prodConfig);
-} else if (target === 'dev') {
-	config = webpackMerge(common, serverConfig);
+} else {
+	config = webpackMerge(common, devConfig);
 }
 
 module.exports = config;
