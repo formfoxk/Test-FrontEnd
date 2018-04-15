@@ -18,10 +18,6 @@ const common = {
 
 	devtool: 'eval-source-map',
 
-	resolve: {
-
-	},
-
 	module: {
 		rules: [{
 				test: /\.js$/,
@@ -97,9 +93,9 @@ const serverConfig = {
 		hot: true,
 		inline: true,
 		port: 4000,
-		compress: true,
+		// compress: true,
 		// publicPath: '/dist/',
-		// contentBase: path.join(__dirname, '/dist/')
+		contentBase: path.join(__dirname, '/dist/')
 	},
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),

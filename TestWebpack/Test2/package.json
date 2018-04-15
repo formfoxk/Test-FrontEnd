@@ -7,7 +7,7 @@
     "build": "rm -rf dist && webpack",
     "build:prod": "rm -rf dist && webpack -p",
     "watch": "rm -rf dist && webpack --watch",
-    "dev": "rm -rf dist && webpack-dev-server -d"
+    "dev": "rm -rf dist && webpack-dev-server --open"
   },
   "keywords": [],
   "author": "",
