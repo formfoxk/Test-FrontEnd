@@ -65,3 +65,4 @@ typings/
 
 package-lock.json
 /TestWebpack/Test/node_modules/
+/TestWebpack/Test2/node_modules/

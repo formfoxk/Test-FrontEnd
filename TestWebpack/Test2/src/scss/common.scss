@@ -1,6 +1,7 @@
 @import 'text.scss';
 
-$bg-color: #333333;
+// $bg-color: url('../asset/webpack.svg');
+$bg-color: red;
 
 body {
   background-color: $bg-color;
