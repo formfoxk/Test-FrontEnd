@@ -5,15 +5,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpackMerge = require('webpack-merge');
 
 const PATHS = {
-	src: path.join(__dirname, './src/js'),
+	src: path.join(__dirname, 'src'),
 	dist: path.join(__dirname, 'dist'),
 }
 
 const common = {
-	context: path.join(__dirname),
-
 	entry: {
-		bundle: PATHS.src	
+		bundle: PATHS.src + '/js'
 	},
 
 	output: {
@@ -21,12 +19,10 @@ const common = {
 		path: PATHS.dist
 	},
 
-	devtool: 'eval-source-map',
-
 	module: {
 		rules: [{
 				test: /\.js$/,
-				include: path.join(__dirname, 'src'),
+				include: PATHS.src,
 				exclude: /node_modules/,
 				use: {
 					loader: 'babel-loader',
@@ -48,7 +44,7 @@ const common = {
 					loader: 'url-loader',
 					options: {
 						name: '[name].[ext]?[hash]',
-						publicPath: './dist',
+						publicPath: PATHS.dist,
 						limit: 10000
 					}
 				}
@@ -76,8 +72,8 @@ const common = {
 const prodConfig = {
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: path.join(__dirname, './index.html'),
-			filename: path.join(__dirname, './dist/index.html'),
+			template: PATHS.src + '/index.html',
+			filename: PATHS.dist + '/index.html',
 			inject: true,
 			minify: {
 				collapseWhitespace: true,
@@ -94,10 +90,11 @@ const prodConfig = {
 }
 
 const devConfig = {
+	// devtool: 'eval-source-map',
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: path.join(__dirname, './index.html'),
-			filename: path.join(__dirname, './dist/index.html'),
+			template: PATHS.src + '/index.html',
+			filename: PATHS.dist + '/index.html',
 			inject: true,
 		}),
 		new webpack.HotModuleReplacementPlugin(),
@@ -108,14 +105,14 @@ const devConfig = {
 		port: 4000,
 		compress: true,
 		// publicPath: '/dist/',
-		contentBase: path.join(__dirname, '/dist')
+		contentBase: PATHS.dist
 	},
 }
 
 const target = process.env.npm_lifecycle_event;
 console.log('target : ' + target);
 var config;
-if (target === 'build') {
+if (target === 'build:prod') {
 	config = webpackMerge(common, prodConfig);
 } else {
 	config = webpackMerge(common, devConfig);

@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build:prod": "rm -rf dist && webpack",
     "build": "rm -rf dist && webpack",
     "dev": "webpack-dev-server --open"
   },
