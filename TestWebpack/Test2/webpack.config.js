@@ -11,7 +11,7 @@ const PATHS = {
 
 const common = {
 	entry: {
-		bundle: PATHS.src + '/js'
+		bundle: PATHS.src + '/js',
 	},
 
 	output: {
@@ -90,7 +90,7 @@ const prodConfig = {
 }
 
 const devConfig = {
-	// devtool: 'eval-source-map',
+	devtool: 'eval-source-map',
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: PATHS.src + '/index.html',
