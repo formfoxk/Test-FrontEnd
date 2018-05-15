@@ -10,7 +10,7 @@ const PATHS = {
 
 const common = {
     entry: {
-        bundle: PATHS.src + '/js',
+        bundle: PATHS.src + '/js/index.js',
     },
 
     output: {
@@ -80,7 +80,7 @@ const common = {
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'commons',
-            filename: 'commons.js',
+            filename: 'js/commons.js',
             minChunks: Infinity
         }),
         new ExtractTextPlugin('css/[name].css'),
